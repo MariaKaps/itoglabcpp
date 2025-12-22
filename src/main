@@ -3,17 +3,17 @@
 #include <vector>
 
 void printHelp() {
-    std::cout << "Медиа-каталог - управление коллекцией книг/фильмов\n\n";
-    std::cout << "Использование:\n";
-    std::cout << "  ./media_catalog --input FILE.json [команды]\n\n";
-    std::cout << "Команды:\n";
-    std::cout << "  --find TEXT          Поиск по названию\n";
-    std::cout << "  --author TEXT        Поиск по автору\n";
-    std::cout << "  --tag TAG            Поиск по тегу\n";
-    std::cout << "  --top N              Топ-N по рейтингу\n";
-    std::cout << "  --duplicates         Поиск дубликатов\n";
-    std::cout << "  --output FILE.json   Сохранить результаты\n";
-    std::cout << "  --help               Показать эту справку\n";
+    std::cout << "Media Catalog - Book/Movie Collection Management\n\n";
+    std::cout << " --help Show this help\n";
+    sTD::Count << " --Tag Tag Search by Tag\n";
+    sTD::Count <<" --Tag Tag Search by Tag\n";
+    std::cout << " --find TEXT Search by name\n";
+    std::cout << " --author TEXT Search by author\n";
+    sTD::Count <<" --Tag Tag Search by Tag\n";
+    std::cout << " --top N Top-N by rating\n";
+    std::cout << " --duplicates Find duplicates\n";
+    std::cout << " --output FILE.json Save results\n";
+    std::cout << " --help Show this help\n";
 }
 
 int main(int argc, char* argv[]) {
@@ -55,7 +55,7 @@ int main(int argc, char* argv[]) {
     MediaCatalog catalog;
 
     if (!catalog.loadFromJSON(inputFile)) {
-        std::cerr << "Ошибка загрузки файла: " << inputFile << std::endl;
+        std::cerr << "File upload error: " << inputFile << std::endl;
         return 1;
     }
 
