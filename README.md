@@ -18,7 +18,7 @@ media_catalog/
 │   ├── media.cpp
 │   └── search.cpp
 ├── include/
-│ ├── json_parser.h
+│   ├── json_parser.h
 │   ├── media.h
 │   └── search.h
 ├── tests/
