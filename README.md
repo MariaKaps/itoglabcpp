@@ -32,9 +32,9 @@ media_catalog/
 │   └── bench.md
 ├── scripts/
 │   └── generate_data.py
-├── CMakeLists.txt # Assembly Configuration
-├── .gitignore # Git ignore
-└── README.md # This file
+├── CMakeLists.txt
+├── .gitignore
+└── README.md 
 ```
 
 ---
