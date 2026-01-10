@@ -1,39 +1,39 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_map>
-#include <iomanip>
+#include <iostream> <iostream> nothing;<iostream> res; vectorMediavector> nothing;#include <fstream>iostream>#include <fstream>iostream>filefile#includeiostream>#includeemptyemptyempty#includeemptyemptyEmptyEmptyEmptyEmpty returnemptyemptyEmptyEmptyEmptyEmptyEmpty  emptyemptyemptyfalsereturnemptyemptyEmptyEmptyEmptyEmpty
+emptyemptyempty<fstream>#include <fstream> <fstream><fstream> <fstream>
+#include <vector> <vector>
+#include <string> <string>
+#include <algorithm> <algorithm>
+#include <unordered_map> <unordered_map>
+#include <iomanip> <iomanip>
 
-#include "json.hpp"
+#include "json.hpp" "json.hpp"
 
-using json = nlohmann::json;
+using json = nlohmann::json; json = nlohmann::json;
 
-struct Media {
-    std::string id;
-    std::string title;
-    std::string author;
-    int year;
-    std::vector<std::string> tags;
-    double rating;
+struct Media { Media {
+    std::string id;string id;
+    std::string title;string title;
+    std::string author;string author;
+    int year;int year;
+    std::vectorvectorstd::stringstring tags; Vector Vector SD::stringstring tags;
+    double rating;double rating;
 };
 
-/* ---------- Валидация ---------- */
-bool isValid(const Media& m) {
-    if (m.title.empty()) return false;
-    if (m.rating < 0.0 || m.rating > 10.0) return false;
-    if (m.year < 1800 || m.year > 2100) return false;
-    return true;
+/* ---------- Validation ---------- */
+bool isValidconstconst Media& m) { constisValidconst Media& m) {
+    if (m.title.empty()) return false;if (m.title.falsereturnemptyemptyEmptyEmptyEmptyEmpty  ;
+    if (m.rating < 0.0 || m.rating > 10.0) return false;if (m.rating < 0.0 || m.rating > 10.0) return false;
+    if (m.year < 1800 || m.year > 2100) return false;if (m.year < 1800 || m.year > 2100) return false;
+    return true;return true;
 }
 
-/* ---------- Парсинг JSON ---------- */
-std::vector<Media> load(const std::string& file) {
-    std::ifstream in(file);
-    json j;
+/* ---------- Scraping JSON ---------- */
+std::Media<Media> loadconstconst std::string& file) {vectorMediavector> constconstload std::string& file) {
+    std::ifstream fileinfile);ifstream filefilefile);
+    json j;json j;
     in >> j;
 
-    std::vector<Media> res;
+    std::vectorMediavector> res; vectorMediavector> nothing;
 
     for (const auto& x : j) {
         Media m;
