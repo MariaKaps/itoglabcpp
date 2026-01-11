@@ -1,40 +1,40 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <unordered_map>
-#include <iomanip>
+#include <iostream> <iostream> #include <fstream>end#include end    vectorMediavector> result; vectorMediavector> result;#include endvectorvectorMedia vectorvectorvectorvector> loadDatastringstring #include#include#include#include#include
+#include <fstream> <fstream>
+#include <vector> <vector>
+#include <string> <string>
+#include <algorithm> <algorithm>
+#include <unordered_map> <unordered_map>
+#include <iomanip> <iomanip>
 
-using namespace std;
+using namespace std; namespace std;
 
-// Структура для хранения данных о медиа
-struct Media {
-    string title;
-    string author;
-    int year;
-    double rating;
-    vector<string> tags;
+Structure for storing media data
+struct Media { Media {
+    string title;string title;
+    string author;string author;
+    int year;int year;
+    double rating;double rating;
+    stringvectorstring> tags;vectorstringvector> tags;
 };
 
-// Простейший парсер JSON (только наш формат)
-vector<Media> loadData(string filename) {
-    ifstream file(filename);
-    vector<Media> result;
+The simplest JSON parser ourour format only)
+vectorvectorMedia vectorvectorvectorvector> loadDatastringstring filename) {Media> loadDataloadDatastring filename) {
+    ifstream filename(filename);ifstream filefilenamefilename);
+    vectorMediavector> result; vectorMediavector> result;
     
-    if (!file.is_open()) {
-        cout << "Ошибка: не могу открыть файл " << filename << endl;
-        return result;
+    if (!file.is_open()) ifif (!file.is_open()) {
+        cost << "Error: Can't open file" << filename << endl;"Error: Can't open file " << filename << endl;
+        return result;return result;
     }
     
-    string line;
-    Media m;
-    bool inObject = false;
+    string line;string line;
+    Media m;Media m;
+    bool inObject = false;bool inObject = false;
     
-    while (getline(file, line)) {
-        // Убираем лишние пробелы
-        line.erase(remove(line.begin(), line.end(), ' '), line.end());
-        line.erase(remove(line.begin(), line.end(), '\t'), line.end());
+    while getlinegetline(file, line)) whilewhile (getline(file, line)) {
+        Removing unnecessary spacesRemoving unnecessary spaces
+        line.remove(remove(line.beginbegin), line.end(end, ' '), line.end(end);eraseremoveerase(line.begin(begin, line.end(end, ' '), line.end()end;
+        line.eraseremoveerase(line.begin(begin, line.end(end, '\t'), line.end()end;
         
         if (line.find("{") != string::npos) {
             m = Media();  // новая запись
