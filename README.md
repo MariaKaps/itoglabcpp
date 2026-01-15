@@ -7,44 +7,62 @@ A C++ console application that implements the media catalog to encrypt and decry
 **Standard:** C++17  
 
 ---
+The project implements a small jSON database system, including:
 
-## Project structure
+data storage and download;
+adding new records;
+basic search by title and author
+faster tag search via N-gram;
+checking the database for duplicates and incorrect entries;
+random data generator for testing;
+benchmarking of performance.
+Features
+Displaying the entire database
+Displays all column-formatted records.
 
-```
-media_catalog/
-├── src/
-│   ├── main.cpp
-│   ├── json_parser.cpp
-│   ├── media.cpp
-│   └── search.cpp
-├── include/
-│   ├── json_parser.h
-│   ├── media.h
-│   └── search.h
-├── tests/
-│   ├── test_parser.cpp
-│   └── test_search.cpp
-├── data/
-│   ├── small_catalog.json
-│   └── large_catalog.json
-├── docs/
-│   ├── Implementation_Plan.md
-│   └── bench.md
-├── scripts/
-│   └── generate_data.py
-├── CMakeLists.txt
-├── .gitignore
-└── README.md 
-```
+Add new data
+Adding a record with the following fields: id, title, author, year, tags, rating.
 
----
+Basic search
 
-## Requirements
+Search by title and author with the query lowercased.
+The results are sorted and the top N by rating can be displayed.
+Search by tags (accelerated)
 
-- **Compiler:** GCC 7+ / Clang 5+ / MSVC 2017+
-- **CMake:** version 3.10+
-- **OS:** Linux, macOS, Windows
+Uses the n-gram index for quick tag searches.
+Allows you to execute thousands of queries in a fraction of a millisecond on a large database.
+Database Validation
 
----
+Displaying invalid entries with an indication of the reason (duplicate id, duplicate name, invalid fields).
+Enter the number: 
+Benchmarking
 
-## Build the project
+Estimating the search execution time.
+Support for two modes: normal search and tag search.
+Displays the average run time for a given number of runs.
+Help
+
+A quick summary of the available features of the program.
+Test data generator (see scripts folder)
+
+Generate random entries or choose from pre-prepared options.
+Build and run
+Clone the repository:
+git clone https://github.com/usrnmeee/LR
+cd project
+Assembly via g++ (example for Linux/macOS):
+g++ -std=c++17 src/*.cpp -o database_app
+Starting the program:
+./database_app
+Example of work
+Choose an action:
+1 - Show full catalog
+0 - Exit
+3 - Filter by Tag
+4 - Top-N by rating
+5 - Find duplicates
+6 - Show Stats
+7 - Save Catalog
+8 - Add New Record
+0 - Exit
+Enter the number: 
